@@ -1,0 +1,85 @@
+---
+import { siteName, footerColumns, footerContact, socialLinks } from '../../constants';
+import Icon from './Icon.tsx';
+---
+
+<footer class="bg-gray-900 text-gray-300">
+	<div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+		<div class="grid grid-cols-1 gap-10 md:grid-cols-4">
+			<div>
+				<a href="/" class="flex items-center gap-2 text-xl font-bold text-white">
+					<span class="flex h-9 w-9 items-center justify-center rounded-lg bg-brand-500 font-black text-white">
+						GC
+					</span>
+					{siteName}
+				</a>
+				<p class="mt-4 text-sm leading-relaxed text-gray-400">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
+					incididunt.
+				</p>
+				<ul class="mt-6 flex gap-4">
+					{socialLinks.map((social) => (
+						<li>
+							<a
+								href={social.href}
+								aria-label={social.label}
+								class="flex h-10 w-10 items-center justify-center rounded-full bg-gray-800 text-gray-400 transition hover:bg-brand-600 hover:text-white"
+							>
+								<Icon name={social.icon} className="h-4 w-4" />
+							</a>
+						</li>
+					))}
+				</ul>
+			</div>
+
+			{footerColumns.map((column) => (
+				<div>
+					<h3 class="text-sm font-semibold uppercase tracking-wider text-white">
+						{column.heading}
+					</h3>
+					<ul class="mt-4 space-y-3">
+						{column.links.map((link) => (
+							<li>
+								<a href={link.href} class="text-sm text-gray-400 transition hover:text-white">
+									{link.label}
+								</a>
+							</li>
+						))}
+					</ul>
+				</div>
+			))}
+
+			<div>
+				<h3 class="text-sm font-semibold uppercase tracking-wider text-white">Contact</h3>
+				<ul class="mt-4 space-y-3 text-sm text-gray-400">
+					<li>
+						<a
+							href={`tel:${footerContact.phone.replace(/\s/g, '')}`}
+							class="flex items-center gap-2 transition hover:text-white"
+						>
+							<Icon name="FaPhoneAlt" className="h-4 w-4 text-brand-500" />
+							{footerContact.phone}
+						</a>
+					</li>
+					<li>
+						<a
+							href={`mailto:${footerContact.email}`}
+							class="flex items-center gap-2 transition hover:text-white"
+						>
+							<Icon name="FaEnvelope" className="h-4 w-4 text-brand-500" />
+							{footerContact.email}
+						</a>
+					</li>
+					<li class="flex items-start gap-2">
+						<Icon name="FaMapMarkerAlt" className="mt-1 h-4 w-4 shrink-0 text-brand-500" />
+						{footerContact.address}
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="mt-12 border-t border-gray-800 pt-8 text-center text-sm text-gray-500">
+			&copy; {new Date().getFullYear()} {siteName}. All rights reserved.
+		</div>
+	</div>
+</footer>
