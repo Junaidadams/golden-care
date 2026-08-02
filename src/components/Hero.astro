@@ -2,16 +2,17 @@
 import { hero } from '../../constants';
 ---
 
-<section class="bg-gradient-to-b from-brand-50 to-white">
-	<div class="mx-auto max-w-7xl px-4 py-24 sm:px-6 sm:py-32 lg:px-8">
-		<div class="mx-auto max-w-3xl text-center">
+<section class="section-size relative overflow-hidden">
+	<img src="src/assets/herobanner.jpg" class="absolute inset-0 z-0 h-full w-full object-cover brightness-75" />
+	<div class="absolute inset-0 z-10 mx-auto flex max-w-7xl items-center px-4 sm:px-6 lg:px-8">
+		<div class="mx-auto max-w-3xl  text-white text-left">
 			<span class="inline-block rounded-full bg-brand-100 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-brand-700">
 				Care you can trust
 			</span>
-			<h1 class="mt-6 text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
+			<h1 class="mt-6 text-4xl font-extrabold tracking-tight  sm:text-5xl lg:text-6xl">
 				{hero.heading}
 			</h1>
-			<p class="mt-6 text-lg leading-relaxed text-gray-600">{hero.text}</p>
+			<p class="mt-6 text-lg leading-relaxed ">{hero.text}</p>
 			<div class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
 				{hero.ctas.map((cta) =>
 					cta.primary ? (
