@@ -10,23 +10,24 @@ interface Props {
 const { items = packages } = Astro.props;
 ---
 
-<section id="packages" class="bg-gray-50">
-	<div class="mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
+<section id="packages" class="bg-[#F7F3EE]">
+	<div class="mx-auto max-w-5xl px-4 py-24 sm:px-6 lg:px-8">
 		<div class="mx-auto max-w-2xl text-center">
-			<h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Care packages</h2>
+			<p class="text-xs uppercase text-brand-500 font-bold">Our Packages</p>
+			<h2 class="mt-2 text-3xl tracking-tight text-gray-900 sm:text-4xl font-fraunces font-semibold">Tailored Care Packages</h2>
 			<p class="mt-4 text-lg text-gray-600">
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
 			</p>
 		</div>
 
-		<div class="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3">
+		<div class="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2">
 			{items.map((pkg) => (
-				<article class="flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+				<article class="flex flex-col overflow-hidden rounded-sm bg-[#F7F6F5] shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
 					<div class="flex h-40 items-center justify-center bg-gradient-to-br from-brand-100 to-brand-200 text-brand-600">
 						<Icon name={pkg.icon} className="h-16 w-16" />
 					</div>
-					<div class="flex flex-1 flex-col p-8">
-						<h3 class="text-xl font-semibold text-gray-900">{pkg.heading}</h3>
+					<div class="flex flex-1 flex-col p-4">
+						<h3 class="text-xl font-bold text-black">{pkg.heading}</h3>
 						<ul class="mt-4 flex-1 space-y-3">
 							{pkg.points.map((point) => (
 								<li class="flex items-start gap-3 text-sm text-gray-600">
@@ -37,7 +38,7 @@ const { items = packages } = Astro.props;
 						</ul>
 						<a
 							href={pkg.cta.href}
-							class="mt-8 rounded-lg bg-brand-600 px-6 py-3 text-center text-sm font-semibold text-white transition hover:bg-brand-700"
+							class="mt-8 rounded-2xl bg-[#F7F3EE] border border-gray-300 px-6 py-3 text-center text-sm font-semibold text-black transition hover:bg-brand-700"
 						>
 							{pkg.cta.label}
 						</a>

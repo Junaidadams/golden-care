@@ -118,6 +118,16 @@ export const packages: Package[] = [
     ],
     cta: { label: "Choose Palliative", href: "#", primary: true },
   },
+  {
+    icon: "FaHandHoldingHeart",
+    heading: "Palliative Care",
+    points: [
+      "Duis aute irure dolor",
+      "In reprehenderit voluptate",
+      "Velit esse cillum dolore",
+    ],
+    cta: { label: "Choose Palliative", href: "#", primary: true },
+  },
 ];
 
 export const locations = {

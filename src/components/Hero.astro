@@ -9,11 +9,11 @@ import { hero } from '../../constants';
 			<span class="inline-block rounded-full bg-brand-100 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-brand-700">
 				Care you can trust
 			</span>
-			<h1 class="mt-6 text-4xl font-extrabold tracking-tight  sm:text-5xl lg:text-6xl">
+			<h1 class="mt-6 text-4xl font-fraunces tracking-wide font-extrabold sm:text-5xl lg:text-6xl">
 				{hero.heading}
 			</h1>
-			<p class="mt-6 text-lg leading-relaxed ">{hero.text}</p>
-			<div class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+			<p class="mt-6 text-lg leading-relaxed font-semibold">{hero.text}</p>
+			<div class="mt-10 flex flex-col items-start gap-4 sm:flex-row border-gray-300 border-b pb-10">
 				{hero.ctas.map((cta) =>
 					cta.primary ? (
 						<a
@@ -25,13 +25,14 @@ import { hero } from '../../constants';
 					) : (
 						<a
 							href={cta.href}
-							class="rounded-lg border-2 border-brand-600 px-8 py-3 text-base font-semibold text-brand-600 transition hover:bg-brand-50"
+							class="rounded-lg border-2 border-white px-8 py-3 text-base font-semibold text-white transition hover:bg-brand-50"
 						>
 							{cta.label}
 						</a>
-					),
+					)
 				)}
 			</div>
+			<div></div>
 		</div>
 	</div>
 </section>

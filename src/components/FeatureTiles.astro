@@ -10,15 +10,16 @@ interface Props {
 const { items = features } = Astro.props;
 ---
 
-<section id="features" class="bg-white">
-	<div class="mx-auto max-w-7xl p-10">
-		<div class=" grid grid-cols-1 gap-1 sm:grid-cols-2 lg:grid-cols-4">
+<section id="features" class="bg-[#F7F6F5] border-b border-gray-200
+">
+	<div class="mx-auto max-w-5xl px-10 py-20">
+		<div class=" grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
 			{items.map((feature) => (
-				<article class="flex items-center gap-2 transition hover:-translate-y-1">
+				<article class="flex items-center gap-4 transition hover:-translate-y-1">
 					<div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-100 text-brand-600">
 						<Icon name={feature.icon} className="h-6 w-6" />
 					</div>
-					<div class="flex flex-col gap-2">
+					<div class="flex flex-col gap-1">
 						<h3 class=" text-lg font-semibold text-gray-900">{feature.heading}</h3>
 						<p class=" text-sm leading-relaxed text-gray-600">{feature.description}</p>
 					</div>
