@@ -133,12 +133,12 @@ export const packages: Package[] = [
 export const locations = {
   heading: "Where we can provide care",
   text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  areas: ["London", "Manchester", "Birmingham", "Leeds"],
+  areas: ["Somerset West", "Strand", "Gordon's Bay", "Helderberg"],
 };
 
 export const philosophy = {
-  heading: "Our philosophy",
-  text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  heading: "Dignity First Philosophy",
+  text: "We believe in empowering the elderly to continue to do the things they love, while also assisting them with day-to-day actions they might struggle with.",
   values: ["Dignity", "Compassion", "Independence", "Trust"],
 };
 
@@ -170,7 +170,7 @@ export const footerColumns: FooterColumn[] = [
 ];
 
 export const footerContact = {
-  phone: "+44 1234 567 890",
+  phone: "+27 82 675 6350",
   email: "hello@goldencare.example",
   address: "1 Lorem Street, Ipswich, IP1 1AA",
 };

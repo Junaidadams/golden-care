@@ -1,6 +1,7 @@
 ---
 import { packages } from '../../constants';
 import type { Package } from '../../constants';
+import HeadingText from './HeadingText.astro';
 import Icon from './Icon.tsx';
 
 interface Props {
@@ -12,13 +13,11 @@ const { items = packages } = Astro.props;
 
 <section id="packages" class="bg-[#F7F3EE]">
 	<div class="mx-auto max-w-5xl px-4 py-24 sm:px-6 lg:px-8">
-		<div class="mx-auto max-w-2xl text-center">
-			<p class="text-xs uppercase text-brand-500 font-bold">Our Packages</p>
-			<h2 class="mt-2 text-3xl tracking-tight text-gray-900 sm:text-4xl font-fraunces font-semibold">Tailored Care Packages</h2>
-			<p class="mt-4 text-lg text-gray-600">
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
-			</p>
-		</div>
+		<HeadingText
+			heading="Tailored Care Packages"
+			subheading="Our Packages"
+			description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
+		/>
 
 		<div class="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2">
 			{items.map((pkg) => (
