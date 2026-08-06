@@ -45,7 +45,7 @@ export interface FooterColumn {
   links: FooterLink[];
 }
 
-export const siteName = "Golden Care";
+export const siteName = "Within Reach";
 
 export const navLinks: FooterLink[] = [
   { label: "Home", href: "/" },
@@ -142,13 +142,23 @@ export const philosophy = {
   values: ["Dignity", "Compassion", "Independence", "Trust"],
 };
 
+export const operatingHours: { day: string; hours: string }[] = [
+  { day: "Monday", hours: "8:00 AM - 5:00 PM" },
+  { day: "Tuesday", hours: "8:00 AM - 5:00 PM" },
+  { day: "Wednesday", hours: "8:00 AM - 5:00 PM" },
+  { day: "Thursday", hours: "8:00 AM - 5:00 PM" },
+  { day: "Friday", hours: "8:00 AM - 5:00 PM" },
+  { day: "Saturday", hours: "9:00 AM - 1:00 PM" },
+  { day: "Sunday", hours: "Closed" },
+];
+
 export const footerColumns: FooterColumn[] = [
   {
     heading: "Company",
     links: [
       { label: "About us", href: "#" },
       { label: "Careers", href: "#" },
-      { label: "Contact", href: "#" },
+      { label: "Contact", href: "/contact" },
     ],
   },
   {

@@ -1,0 +1,153 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeadingText from '../components/HeadingText.astro';
+import Icon from '../components/Icon.tsx';
+import PageHeader from '../components/PageHeader.astro';
+import Tile from '../components/Tile.astro';
+import { footerContact, operatingHours, socialLinks } from '../../constants';
+---
+
+<Layout>
+	<PageHeader
+    image='src/assets/contact-header.jpg'
+		title="Get in touch with us"
+		subtitle="Contact"
+		description="Whether you have a question about our care packages or want to arrange a visit, our team is here to help."
+	/>
+
+	<section class="bg-[#F7F6F5] border-b border-gray-200">
+		<div class="mx-auto max-w-5xl px-4 py-24 sm:px-6 lg:px-8">
+			<div class="grid grid-cols-1 items-start gap-12 lg:grid-cols-2">
+				<div>
+					<HeadingText
+						heading="Send us a message"
+						subheading="We'd love to hear from you"
+						description="Fill in the form below and a member of our team will get back to you as soon as possible."
+						position="left"
+					/>
+
+					<form method="post" action="#" class="mt-8 space-y-5">
+						<div class="grid grid-cols-1 gap-5 sm:grid-cols-2">
+							<div>
+								<label for="name" class="mb-1.5 block text-sm font-medium text-gray-700">
+									Full name
+								</label>
+								<input
+									id="name"
+									name="name"
+									type="text"
+									required
+									placeholder="Jane Doe"
+									class="w-full rounded-sm border border-gray-300 bg-white px-4 py-3 text-sm text-gray-900 placeholder-gray-400 transition focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-200"
+								/>
+							</div>
+							<div>
+								<label for="email" class="mb-1.5 block text-sm font-medium text-gray-700">
+									Email address
+								</label>
+								<input
+									id="email"
+									name="email"
+									type="email"
+									required
+									placeholder="jane@example.com"
+									class="w-full rounded-sm border border-gray-300 bg-white px-4 py-3 text-sm text-gray-900 placeholder-gray-400 transition focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-200"
+								/>
+							</div>
+						</div>
+						<div>
+							<label for="phone" class="mb-1.5 block text-sm font-medium text-gray-700">
+								Phone number
+							</label>
+							<input
+								id="phone"
+								name="phone"
+								type="tel"
+								placeholder="+27 82 000 0000"
+								class="w-full rounded-sm border border-gray-300 bg-white px-4 py-3 text-sm text-gray-900 placeholder-gray-400 transition focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-200"
+							/>
+						</div>
+						<div>
+							<label for="message" class="mb-1.5 block text-sm font-medium text-gray-700">
+								Message
+							</label>
+							<textarea
+								id="message"
+								name="message"
+								rows="5"
+								required
+								placeholder="How can we help?"
+								class="w-full resize-y rounded-sm border border-gray-300 bg-white px-4 py-3 text-sm text-gray-900 placeholder-gray-400 transition focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-200"
+							></textarea>
+						</div>
+						<button
+							type="submit"
+							class="rounded-lg bg-brand-600 px-8 py-3 text-base font-semibold text-white shadow-lg shadow-brand-600/30 transition hover:bg-brand-700"
+						>
+							Send message
+						</button>
+					</form>
+				</div>
+
+				<div class="space-y-8">
+					<Tile heading="Operating hours" icon="FiClock">
+					<ul class="mt-6 divide-y divide-gray-100">
+						{operatingHours.map((slot) => (
+							<li class="flex items-center justify-between py-3 text-sm">
+								<span class="font-medium text-gray-700">{slot.day}</span>
+								<span
+									class:list={[
+										slot.hours === 'Closed' ? 'text-brand-700' : 'text-gray-600',
+									]}
+								>
+									{slot.hours}
+								</span>
+							</li>
+						))}
+					</ul>
+				</Tile>
+
+				<Tile heading="Get in touch" icon="FaPhoneAlt">
+					<ul class="mt-6 space-y-4 text-sm text-gray-600">
+						<li>
+							<a
+								href={`tel:${footerContact.phone.replace(/\s/g, '')}`}
+								class="flex items-center gap-3 font-medium transition hover:text-brand-600"
+							>
+								<Icon name="FaPhoneAlt" className="h-4 w-4 shrink-0 text-brand-500" />
+								{footerContact.phone}
+							</a>
+						</li>
+						<li>
+							<a
+								href={`mailto:${footerContact.email}`}
+								class="flex items-center gap-3 font-medium transition hover:text-brand-600"
+							>
+								<Icon name="FaEnvelope" className="h-4 w-4 shrink-0 text-brand-500" />
+								{footerContact.email}
+							</a>
+						</li>
+						<li class="flex items-start gap-3">
+							<Icon name="FaMapMarkerAlt" className="mt-0.5 h-4 w-4 shrink-0 text-brand-500" />
+							{footerContact.address}
+						</li>
+					</ul>
+					<ul class="mt-6 flex gap-4">
+						{socialLinks.map((social) => (
+							<li>
+								<a
+									href={social.href}
+									aria-label={social.label}
+									class="flex h-10 w-10 items-center justify-center rounded-full bg-brand-600 text-white transition hover:bg-brand-700"
+								>
+									<Icon name={social.icon} className="h-4 w-4" />
+								</a>
+							</li>
+						))}
+					</ul>
+				</Tile>
+				</div>
+			</div>
+		</div>
+	</section>
+</Layout>
