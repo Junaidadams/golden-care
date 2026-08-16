@@ -1,0 +1,43 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import Icon from '../components/Icon.tsx';
+import { faqs } from '../../constants';
+import FaqTileAstroComponent from '../components/FaqTile.astro';
+---
+
+<Layout>
+	<PageHeader
+	image='src/assets/faq-header.jpg'
+		title="Frequently asked questions"
+		subtitle="FAQ"
+		description="Answers to common questions about our care visits, services, pricing and subscriptions."
+	/>
+
+	<section class="bg-background-2 border-b border-gray-200">
+		<div class="mx-auto max-w-3xl px-4 py-24 sm:px-6 lg:px-8">
+			<div class="space-y-4">
+				{faqs.map((faq) => (
+					<FaqTileAstroComponent faq={faq} Icon={Icon} />
+				))}
+			</div>
+		</div>
+	</section>
+
+	<section class="bg-brand-600">
+		<div class="mx-auto max-w-4xl px-4 py-24 text-center sm:px-6 lg:px-8">
+			<h2 class="text-3xl tracking-tight sm:text-4xl font-fraunces font-semibold text-white">
+				Still have questions?
+			</h2>
+			<p class="mt-4 text-lg text-brand-100">
+				Our team is happy to help with anything else you'd like to know about our care services.
+			</p>
+			<a
+				href="/contact"
+				class="mt-8 inline-block rounded-lg bg-white px-8 py-3 text-base font-semibold text-brand-700 shadow-lg transition hover:bg-brand-50"
+			>
+				Contact us
+			</a>
+		</div>
+	</section>
+</Layout>

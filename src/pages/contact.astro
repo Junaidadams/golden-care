@@ -15,7 +15,7 @@ import { footerContact, operatingHours, socialLinks } from '../../constants';
 		description="Whether you have a question about our care packages or want to arrange a visit, our team is here to help."
 	/>
 
-	<section class="bg-[#F7F6F5] border-b border-gray-200">
+	<section class="bg-background-2 border-b border-gray-200">
 		<div class="mx-auto max-w-5xl px-4 py-24 sm:px-6 lg:px-8">
 			<div class="grid grid-cols-1 items-start gap-12 lg:grid-cols-2">
 				<div>
@@ -82,7 +82,7 @@ import { footerContact, operatingHours, socialLinks } from '../../constants';
 						</div>
 						<button
 							type="submit"
-							class="rounded-lg bg-brand-600 px-8 py-3 text-base font-semibold text-white shadow-lg shadow-brand-600/30 transition hover:bg-brand-700"
+							class="rounded-sm bg-brand-600 px-8 py-3 text-base font-semibold text-white shadow-sm shadow-brand-600/30 transition hover:bg-brand-700"
 						>
 							Send message
 						</button>
@@ -90,14 +90,14 @@ import { footerContact, operatingHours, socialLinks } from '../../constants';
 				</div>
 
 				<div class="space-y-8">
-					<Tile heading="Operating hours" icon="FiClock">
+					<Tile heading="Operating hours" icon="FiClock">						
 					<ul class="mt-6 divide-y divide-gray-100">
 						{operatingHours.map((slot) => (
 							<li class="flex items-center justify-between py-3 text-sm">
 								<span class="font-medium text-gray-700">{slot.day}</span>
 								<span
 									class:list={[
-										slot.hours === 'Closed' ? 'text-brand-700' : 'text-gray-600',
+										slot.hours === 'Closed' ? 'text-brand-700' : 'text-gray-800',
 									]}
 								>
 									{slot.hours}
@@ -105,10 +105,11 @@ import { footerContact, operatingHours, socialLinks } from '../../constants';
 							</li>
 						))}
 					</ul>
+					<p class="mt-6 text-sm italic text-gray-500">Note: we currently do not operate on public holidays</p>
 				</Tile>
 
 				<Tile heading="Get in touch" icon="FaPhoneAlt">
-					<ul class="mt-6 space-y-4 text-sm text-gray-600">
+					<ul class="mt-6 space-y-4 text-sm text-gray-800">
 						<li>
 							<a
 								href={`tel:${footerContact.phone.replace(/\s/g, '')}`}
@@ -127,10 +128,10 @@ import { footerContact, operatingHours, socialLinks } from '../../constants';
 								{footerContact.email}
 							</a>
 						</li>
-						<li class="flex items-start gap-3">
+						<!-- <li class="flex items-start gap-3">
 							<Icon name="FaMapMarkerAlt" className="mt-0.5 h-4 w-4 shrink-0 text-brand-500" />
 							{footerContact.address}
-						</li>
+						</li> -->
 					</ul>
 					<ul class="mt-6 flex gap-4">
 						{socialLinks.map((social) => (

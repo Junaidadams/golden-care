@@ -10,7 +10,7 @@ interface Props {
 const { items = features } = Astro.props;
 ---
 
-<section id="features" class="bg-[#F7F6F5] border-b border-gray-200
+<section id="features" class="bg-background-2 border-b border-gray-200
 ">
 	<div class="mx-auto max-w-5xl px-10 py-20">
 		<div class=" grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -21,7 +21,7 @@ const { items = features } = Astro.props;
 					</div>
 					<div class="flex flex-col gap-1">
 						<h3 class=" text-lg font-semibold text-gray-900">{feature.heading}</h3>
-						<p class=" text-sm leading-relaxed text-gray-600">{feature.description}</p>
+						<p class=" text-sm leading-relaxed text-gray-800">{feature.description}</p>
 					</div>
 				</article>
 			))}

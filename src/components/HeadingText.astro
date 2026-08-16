@@ -17,15 +17,11 @@ const pillClass =
 const headingClass =
 	colors === 'dark' ? 'text-white' : 'text-gray-900';
 const descriptionClass =
-	colors === 'dark' ? 'text-brand-100' : 'text-gray-600';
+	colors === 'dark' ? 'text-brand-100' : 'text-gray-800';
 ---
 
 <div class={wrapperClass}>
-	{subheading && (
-		<span class={`inline-block rounded-full px-4 py-1.5 text-xs font-semibold uppercase tracking-wider ${pillClass}`}>
-			{subheading}
-		</span>
-	)}
+
 	<h2 class={`mt-2 text-3xl tracking-tight sm:text-4xl font-fraunces font-semibold ${headingClass}`}>
 		{heading}
 	</h2>

@@ -1,4 +1,4 @@
-import { FiHeart, FiUsers, FiClock, FiHome, FiCheckCircle } from 'react-icons/fi';
+import { FiHeart, FiUsers, FiClock, FiHome, FiCheckCircle, FiPlus } from 'react-icons/fi';
 import {
 	FaMapMarkedAlt,
 	FaHeartbeat,
@@ -20,6 +20,7 @@ const icons: Record<IconName, React.ComponentType<{ className?: string }>> = {
 	FiClock,
 	FiHome,
 	FiCheckCircle,
+	FiPlus,
 	FaMapMarkedAlt,
 	FaHeartbeat,
 	FaCalendarAlt,

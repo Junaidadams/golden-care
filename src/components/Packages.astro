@@ -11,25 +11,26 @@ interface Props {
 const { items = packages } = Astro.props;
 ---
 
-<section id="packages" class="bg-[#F7F3EE] border-b border-gray-200">
+<section id="packages" class="bg-background-1 border-b border-gray-200">
 	<div class="mx-auto max-w-5xl px-4 py-24 sm:px-6 lg:px-8">
 		<HeadingText
 			heading="Tailored Care Packages"
 			subheading="Our Packages"
-			description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
+			description="Care options to suit every stage of life — one-off wellness visits, hourly services and monthly plans."
 		/>
 
 		<div class="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2">
 			{items.map((pkg) => (
-				<article class="flex flex-col overflow-hidden rounded-sm bg-[#F7F6F5] shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
-					<div class="flex h-40 items-center justify-center bg-gradient-to-br from-brand-100 to-brand-200 text-brand-600">
-						<Icon name={pkg.icon} className="h-16 w-16" />
+				<article class="flex flex-col overflow-hidden rounded-sm bg-background-2 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+					<div class="flex w-auto items-center  ">
+						<img src={pkg.img} class="object-contain "/>
 					</div>
 					<div class="flex flex-1 flex-col p-4">
 						<h3 class="text-xl font-bold text-black">{pkg.heading}</h3>
+						{pkg.price && <p class="mt-1 text-sm font-semibold text-brand-700">{pkg.price}</p>}
 						<ul class="mt-4 flex-1 space-y-3">
 							{pkg.points.map((point) => (
-								<li class="flex items-start gap-3 text-sm text-gray-600">
+								<li class="flex items-start gap-3 text-sm text-gray-800">
 									<Icon name="FiCheckCircle" className="mt-0.5 h-4 w-4 shrink-0 text-brand-600" />
 									{point}
 								</li>
@@ -37,7 +38,7 @@ const { items = packages } = Astro.props;
 						</ul>
 						<a
 							href={pkg.cta.href}
-							class="mt-8 rounded-2xl bg-[#F7F3EE] border border-gray-300 px-6 py-3 text-center text-sm font-semibold text-black transition hover:bg-brand-700"
+							class="mt-8 rounded-2xl bg-background-1 border border-gray-300 px-6 py-3 text-center text-sm font-semibold text-black transition hover:bg-background-2"
 						>
 							{pkg.cta.label}
 						</a>
