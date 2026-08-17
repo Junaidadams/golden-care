@@ -4,11 +4,12 @@ import PageHeader from '../components/PageHeader.astro';
 import Icon from '../components/Icon.tsx';
 import { faqs } from '../../constants';
 import FaqTileAstroComponent from '../components/FaqTile.astro';
+import faqHeader from '../assets/faq-header.jpg';
 ---
 
 <Layout>
 	<PageHeader
-	image='src/assets/faq-header.jpg'
+	image={faqHeader}
 		title="Frequently asked questions"
 		subtitle="FAQ"
 		description="Answers to common questions about our care visits, services, pricing and subscriptions."

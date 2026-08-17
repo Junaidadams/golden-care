@@ -1,3 +1,9 @@
+import type { ImageMetadata } from "astro:assets";
+import wellness from "./src/assets/wellness.png";
+import additional from "./src/assets/additional.png";
+import medical from "./src/assets/medical.png";
+import monthly from "./src/assets/monthly.png";
+
 export type IconName =
   | "FiHeart"
   | "FiUsers"
@@ -35,7 +41,7 @@ export interface Package {
   price?: string;
   points: string[];
   cta: Cta;
-  img: string;
+  img: ImageMetadata;
 }
 
 export interface FooterLink {
@@ -95,7 +101,7 @@ export const packages: Package[] = [
     icon: "FaHeartbeat",
     heading: "Wellness Visit",
     price: "R280 per visit",
-    img: "src/assets/wellness.png",
+    img: wellness,
     points: [
       "1 hour visit",
       "Check wellbeing & needs assessment",
@@ -110,7 +116,7 @@ export const packages: Package[] = [
     icon: "FiClock",
     heading: "Additional Services",
     price: "R260 per hour",
-    img: "src/assets/additional.png",
+    img: additional,
     points: [
       "Accompanied shopping & outings",
       "Administration & paperwork support",
@@ -124,7 +130,7 @@ export const packages: Package[] = [
     icon: "FaUserNurse",
     heading: "Medical Services",
     price: "R260 per hour",
-    img: "src/assets/medical.png",
+    img: medical,
     points: [
       "Medical companion for appointments",
       "Hospital visits & admissions support",
@@ -138,7 +144,7 @@ export const packages: Package[] = [
     icon: "FaCalendarAlt",
     heading: "Monthly Subscriptions",
     price: "From R1010 per month",
-    img: "src/assets/monthly.png",
+    img: monthly,
     points: [
       "Essential – R1010: 4 wellness visits",
       "Support – R1525: 4 wellness visits + 2 shopping trips",

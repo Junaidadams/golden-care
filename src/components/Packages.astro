@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import { packages } from '../../constants';
 import type { Package } from '../../constants';
 import HeadingText from './HeadingText.astro';
@@ -23,7 +24,13 @@ const { items = packages } = Astro.props;
 			{items.map((pkg) => (
 				<article class="flex flex-col overflow-hidden rounded-sm bg-background-2 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
 					<div class="flex w-auto items-center  ">
-						<img src={pkg.img} class="object-contain "/>
+						<Image
+							src={pkg.img}
+							alt={pkg.heading}
+							width={465}
+							height={190}
+							class="object-contain "
+						/>
 					</div>
 					<div class="flex flex-1 flex-col p-4">
 						<h3 class="text-xl font-bold text-black">{pkg.heading}</h3>

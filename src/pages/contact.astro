@@ -5,11 +5,12 @@ import Icon from '../components/Icon.tsx';
 import PageHeader from '../components/PageHeader.astro';
 import Tile from '../components/Tile.astro';
 import { footerContact, operatingHours, socialLinks } from '../../constants';
+import contactHeader from '../assets/contact-header.jpg';
 ---
 
 <Layout>
 	<PageHeader
-    image='src/assets/contact-header.jpg'
+    image={contactHeader}
 		title="Get in touch with us"
 		subtitle="Contact"
 		description="Whether you have a question about our care packages or want to arrange a visit, our team is here to help."

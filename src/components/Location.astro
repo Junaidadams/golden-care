@@ -1,11 +1,22 @@
 ---
+import { Image } from 'astro:assets';
 import { locations } from '../../constants';
 import HeadingText from './HeadingText.astro';
 import Icon from './Icon.tsx';
+import textureImage from '../assets/texture.png';
+import mapImage from '../assets/map.png';
 ---
 
 <section id="locations" class="bg-background-2 relative">
-	<img src="src/assets/texture.png" class="w-full h-full object-cover z-0 absolute top-0 opacity-25"/>
+	<Image
+		src={textureImage}
+		alt=""
+		widths={[600, 1000, 1600]}
+		sizes="100vw"
+		quality="medium"
+		loading="lazy"
+		class="w-full h-full object-cover z-0 absolute top-0 opacity-25"
+	/>
 	<div class="mx-auto max-w-5xl px-4 py-24 sm:px-6 lg:px-8 z-10 relative">
 		<div class="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
 			<div>
@@ -29,7 +40,15 @@ import Icon from './Icon.tsx';
 				</span> -->
 				<div class="bg-[#f3efdb] p-1 rounded-sm">					
 					<div class="bg-brand-600 p-1 rounded-sm">
-						<img src="src/assets/map.png" class="w-full h-full rounded-sm"/>
+						<Image
+							src={mapImage}
+							alt="Map of our service area"
+							widths={[600, 900, 1280]}
+							sizes="(min-width: 1024px) 50vw, 100vw"
+							quality="medium"
+							loading="lazy"
+							class="w-full h-full rounded-sm"
+						/>
 					</div>
 				</div>
 			</div>
