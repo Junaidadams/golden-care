@@ -12,12 +12,12 @@ interface Props {
 const { items = packages } = Astro.props;
 ---
 
-<section id="packages" class="bg-background-1 border-b border-gray-200">
+<section id="services" class="bg-background-1 border-b border-gray-200">
 	<div class="mx-auto max-w-5xl px-4 py-24 sm:px-6 lg:px-8">
 		<HeadingText
-			heading="Tailored Care Packages"
-			subheading="Our Packages"
-			description="Care options to suit every stage of life — one-off wellness visits, hourly services and monthly plans."
+			heading="My Services"
+			subheading="Services"
+			description="Companion services to suit every stage of life — one-off visits and hourly assistance."
 		/>
 
 		<div class="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2">
@@ -35,6 +35,7 @@ const { items = packages } = Astro.props;
 					<div class="flex flex-1 flex-col p-4">
 						<h3 class="text-xl font-bold text-black">{pkg.heading}</h3>
 						{pkg.price && <p class="mt-1 text-sm font-semibold text-brand-700">{pkg.price}</p>}
+						{pkg.note && <p class="mt-2 text-xs italic text-gray-500">{pkg.note}</p>}
 						<ul class="mt-4 flex-1 space-y-3">
 							{pkg.points.map((point) => (
 								<li class="flex items-start gap-3 text-sm text-gray-800">

@@ -1,0 +1,43 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import { siteName, termsOfService } from '../../constants';
+import faqHeader from '../assets/faq-header.jpg';
+---
+
+<Layout>
+	<PageHeader
+		image={faqHeader}
+		title="Terms of Service"
+		subtitle="Legal"
+		description={`The terms and conditions for using ${siteName}'s companionship, assistance and transportation services.`}
+	/>
+
+	<section class="bg-background-2 border-b border-gray-200">
+		<div class="mx-auto max-w-3xl px-4 py-24 sm:px-6 lg:px-8">
+			<p class="text-lg leading-relaxed text-gray-800">{termsOfService.intro}</p>
+
+			{termsOfService.sections.map((section, i) => (
+				<div class="mt-12">
+					<h2 class="flex items-center gap-3 text-2xl font-fraunces font-semibold text-gray-900">
+						<span class="text-brand-600">{i + 1}.</span>
+						{section.title}
+					</h2>
+					{section.paragraphs?.map((paragraph) => (
+						<p class="mt-4 leading-relaxed text-gray-800">{paragraph}</p>
+					))}
+					{section.bullets?.length ? (
+						<ul class="mt-4 space-y-3">
+							{section.bullets.map((bullet) => (
+								<li class="flex items-start gap-3 leading-relaxed text-gray-800">
+									<span class="mt-2.5 h-2 w-2 shrink-0 rounded-full bg-brand-600" />
+									{bullet}
+								</li>
+							))}
+						</ul>
+					) : null}
+				</div>
+			))}
+		</div>
+	</section>
+</Layout>

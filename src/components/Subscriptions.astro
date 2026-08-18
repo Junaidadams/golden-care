@@ -1,0 +1,40 @@
+---
+import { subscriptions } from '../../constants';
+import type { Subscription } from '../../constants';
+import HeadingText from './HeadingText.astro';
+
+interface Props {
+	items: Subscription[];
+}
+
+const { items = subscriptions } = Astro.props;
+---
+
+<section id="subscriptions" class="bg-background-2 border-b border-gray-200">
+	<div class="mx-auto max-w-5xl px-4 py-24 sm:px-6 lg:px-8">
+		<HeadingText
+			heading="Monthly Subscriptions"
+			subheading="Plans"
+			description="Regular visits at a predictable monthly rate — great for ongoing companionship and support."
+		/>
+
+		<div class="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3">
+			{items.map((plan) => (
+				<article class="flex flex-col rounded-sm bg-white p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+					<h3 class="font-fraunces text-xl font-bold text-gray-900">{plan.name}</h3>
+					<p class="mt-4 text-3xl font-bold text-brand-700">
+						{plan.price}
+						<span class="text-base font-medium text-gray-500"> {plan.cadence}</span>
+					</p>
+					<p class="mt-4 flex-1 text-sm leading-relaxed text-gray-800">{plan.summary}</p>
+					<a
+						href={plan.cta.href}
+						class="mt-8 rounded-2xl bg-brand-600 px-6 py-3 text-center text-sm font-semibold text-white transition hover:bg-brand-700"
+					>
+						{plan.cta.label}
+					</a>
+				</article>
+			))}
+		</div>
+	</div>
+</section>
