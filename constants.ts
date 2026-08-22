@@ -186,14 +186,16 @@ export const subscriptions: Subscription[] = [
     name: "Support",
     price: "R1525",
     cadence: "per month",
-    summary: "4 wellness visits + 2 shopping trips per month (1 hour each, within a 15km radius).",
+    summary:
+      "4 wellness visits + 2 shopping trips per month (1 hour each, within a 15km radius).",
     cta: { label: "Contact me", href: "/contact", primary: true },
   },
   {
     name: "Comprehensive",
     price: "R2000",
     cadence: "per month",
-    summary: "4 wellness visits + your choice of any 4 hourly services (shopping, outing, administration, technology, medical companion, or hospital visit/support).",
+    summary:
+      "4 wellness visits + your choice of any 4 hourly services (shopping, outing, administration, technology, medical companion, or hospital visit/support).",
     cta: { label: "Contact me", href: "/contact", primary: true },
   },
 ];
@@ -298,7 +300,8 @@ export const faqs: Faq[] = [
     audience: "family",
   },
   {
-    question: "Can you accompany them to medical appointments when I can't be there?",
+    question:
+      "Can you accompany them to medical appointments when I can't be there?",
     answer:
       "Yes — that's exactly what the medical companion service is for. I provide door-to-door support: meeting them at home, getting to the appointment, being present during it, taking notes, and helping them home safely.",
     audience: "family",
@@ -445,7 +448,7 @@ export const footerColumns: FooterColumn[] = [
     heading: "Support",
     links: [
       { label: "FAQ", href: "/faq" },
-      { label: "Privacy policy", href: "#" },
+      // { label: "Privacy policy", href: "#" },
       { label: "Terms of service", href: "/terms" },
     ],
   },
