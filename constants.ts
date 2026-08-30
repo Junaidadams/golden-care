@@ -1,7 +1,10 @@
-import type { ImageMetadata } from "astro:assets";
-import wellness from "./src/assets/wellness.png";
-import additional from "./src/assets/additional.png";
-import medical from "./src/assets/medical.png";
+import type { ImageMetadata } from "astro";
+import wellness from "./src/assets/wellness-companion.jpeg";
+// import additional from "./src/assets/additional.png";
+// import medical from "./src/assets/medical.png";
+import medical from "./src/assets/medical-companion.jpeg";
+import technology from "./src/assets/technology-companion.jpeg";
+import outing from "./src/assets/outing-companion.jpeg";
 
 export type IconName =
   | "FiHeart"
@@ -58,6 +61,7 @@ export const siteName = "Within Reach";
 
 export const navLinks: FooterLink[] = [
   { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
   { label: "Services", href: "/#services" },
   { label: "Locations", href: "/#locations" },
   { label: "FAQ", href: "/faq" },
@@ -65,7 +69,7 @@ export const navLinks: FooterLink[] = [
 ];
 
 export const hero = {
-  heading: "Compassionate companionship for every stage of life",
+  heading: "Companionship and support for everyday life",
   text: "I offer friendly, personalised companionship for older adults in the Helderberg area — from sharing a cup of tea and a chat to help with shopping, errands, admin and attending appointments.",
   ctas: [
     { label: "Get Started", href: "#services", primary: true },
@@ -123,7 +127,7 @@ export const packages: Package[] = [
     heading: "Shopping & Outings",
     price: "R260 per hour",
     note: "Partial hours after the first hour are billed in 30-minute blocks at pro-rata half rate.",
-    img: additional,
+    img: outing,
     points: [
       "Accompanied full door-to-door assistance",
       "Shopping trips",
@@ -138,7 +142,7 @@ export const packages: Package[] = [
     heading: "Admin & Technology",
     price: "R260 per hour",
     note: "Partial hours after the first hour are billed in 30-minute blocks at pro-rata half rate.",
-    img: additional,
+    img: technology,
     points: [
       "Administration: medical aid & gap cover claims, liaison with creditors and debtors, assist with account payments, streamline and file paperwork",
       "Technology: setting up new phones, laptops and email accounts, recovering forgotten passwords, streaming, voice-to-text and e-sign assistance",
@@ -360,6 +364,12 @@ export const philosophyFullText = {
   ],
 };
 
+// Content for the About page. The story prose reuses the full philosophy text above.
+export const about = {
+  name: "Caryl Henrico",
+  ...philosophyFullText,
+};
+
 export const operatingHours: { day: string; hours: string }[] = [
   { day: "Monday", hours: "08:30 AM - 17:30 PM" },
   { day: "Tuesday", hours: "08:30 AM - 17:30 PM" },
@@ -440,7 +450,7 @@ export const footerColumns: FooterColumn[] = [
   {
     heading: "Company",
     links: [
-      { label: "About us", href: "#" },
+      { label: "About us", href: "/about" },
       { label: "Contact", href: "/contact" },
     ],
   },
@@ -448,7 +458,6 @@ export const footerColumns: FooterColumn[] = [
     heading: "Support",
     links: [
       { label: "FAQ", href: "/faq" },
-      // { label: "Privacy policy", href: "#" },
       { label: "Terms of service", href: "/terms" },
     ],
   },

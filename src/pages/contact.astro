@@ -11,6 +11,7 @@ import contactHeader from '../assets/contact-header.jpg';
 <Layout>
 	<PageHeader
     image={contactHeader}
+		imagePosition="top"
 		title="Get in touch with me"
 		subtitle="Contact"
 		description="Whether you have a question about my companionship services or want to arrange a visit, I am here to help."
@@ -27,7 +28,11 @@ import contactHeader from '../assets/contact-header.jpg';
 						position="left"
 					/>
 
-					<form method="post" action="#" class="mt-8 space-y-5">
+					<form id="contact-form" method="post" class="mt-8 space-y-5">
+						<div class="hidden" aria-hidden="true">
+							<label for="company">Company</label>
+							<input id="company" name="company" type="text" tabindex="-1" autocomplete="off" />
+						</div>
 						<div class="grid grid-cols-1 gap-5 sm:grid-cols-2">
 							<div>
 								<label for="name" class="mb-1.5 block text-sm font-medium text-gray-700">
@@ -87,6 +92,7 @@ import contactHeader from '../assets/contact-header.jpg';
 						>
 							Send message
 						</button>
+						<p id="contact-status" hidden aria-live="polite" class="text-sm font-medium"></p>
 					</form>
 				</div>
 
@@ -152,4 +158,10 @@ import contactHeader from '../assets/contact-header.jpg';
 			</div>
 		</div>
 	</section>
+
+	<script>
+		import { initContactForm } from '../scripts/contact-form';
+
+		initContactForm();
+	</script>
 </Layout>
