@@ -7,23 +7,25 @@ interface Props {
 	subtitle?: string;
 	description?: string;
 	image?: ImageMetadata;
+	alt?: string;
 	brightness?: number;
 	imagePosition?: 'top' | 'center' | 'bottom';
 }
 
-const { title, subtitle, description, image, brightness = 70, imagePosition = 'center' } = Astro.props;
+const { title, subtitle, description, image, alt = title, brightness = 70, imagePosition = 'center' } = Astro.props;
 ---
 
 <section class="relative overflow-hidden">
 	{image && (
 		<Image
 			src={image}
-			alt=""
+			alt={alt}
 			widths={[600, 1000, 1600, 2400]}
 			sizes="100vw"
 			quality="medium"
 			loading="eager"
 			fetchpriority="high"
+			decoding="async"
 			class="absolute inset-0 z-0 h-full w-full object-cover"
 			style={{ objectPosition: imagePosition, filter: `brightness(${brightness / 100})` }}
 		/>

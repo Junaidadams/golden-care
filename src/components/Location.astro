@@ -3,7 +3,7 @@ import { Image } from 'astro:assets';
 import { locations } from '../../constants';
 import HeadingText from './HeadingText.astro';
 import Icon from './Icon.tsx';
-import textureImage from '../assets/texture.png';
+import textureImage from '../assets/texture.jpg';
 import mapImage from '../assets/map.png';
 ---
 
@@ -20,7 +20,7 @@ import mapImage from '../assets/map.png';
 	<div class="mx-auto max-w-5xl px-4 py-24 sm:px-6 lg:px-8 z-10 relative">
 		<div class="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
 			<div>
-				<HeadingText heading={locations.heading} subheading='location' description={locations.text} position="left" />
+				<HeadingText heading={locations.heading} subheading='Location' description={locations.text} position="left" />
 
 				<ul class="mt-8 grid grid-cols-2">
 					{locations.areas.map((area) => (

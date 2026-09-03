@@ -1,7 +1,5 @@
 import type { ImageMetadata } from "astro";
 import wellness from "./src/assets/wellness-companion.jpeg";
-// import additional from "./src/assets/additional.png";
-// import medical from "./src/assets/medical.png";
 import medical from "./src/assets/medical-companion.jpeg";
 import technology from "./src/assets/technology-companion.jpeg";
 import outing from "./src/assets/outing-companion.jpeg";
@@ -29,12 +27,6 @@ export interface Cta {
   label: string;
   href: string;
   primary?: boolean;
-}
-
-export interface Feature {
-  icon: IconName;
-  heading: string;
-  description: string;
 }
 
 export interface Package {
@@ -76,32 +68,6 @@ export const hero = {
     { label: "Learn More", href: "#philosophy" },
   ] as Cta[],
 };
-
-export const features: Feature[] = [
-  {
-    icon: "FiHeart",
-    heading: "Personal Companionship",
-    description:
-      "One-on-one time built around you and whatever you most enjoy.",
-  },
-  {
-    icon: "FiUsers",
-    heading: "Local & Trusted",
-    description:
-      "A single trusted companion based in the Helderberg area — not a rotation of strangers.",
-  },
-  {
-    icon: "FiClock",
-    heading: "Flexible Scheduling",
-    description:
-      "Visits arranged around your routine within my weekday operating hours.",
-  },
-  {
-    icon: "FiHome",
-    heading: "In Your Own Home",
-    description: "Support in the comfort and privacy of your own home.",
-  },
-];
 
 export const packages: Package[] = [
   {
@@ -470,6 +436,7 @@ export const footerContact = {
 };
 
 export const socialLinks: { icon: IconName; label: string; href: string }[] = [
+  // TODO: replace placeholder "#" hrefs with real social profile URLs.
   { icon: "FaFacebook", label: "Facebook", href: "#" },
   { icon: "FaTwitter", label: "Twitter", href: "#" },
   { icon: "FaInstagram", label: "Instagram", href: "#" },

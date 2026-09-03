@@ -4,9 +4,26 @@ import PageHeader from '../components/PageHeader.astro';
 import { faqs } from '../../constants';
 import FaqMasterDetail from '../components/FaqMasterDetail.tsx';
 import faqHeader from '../assets/faq-header.jpg';
+
+const faqJsonLd = {
+	'@context': 'https://schema.org',
+	'@type': 'FAQPage',
+	mainEntity: faqs.map((faq) => ({
+		'@type': 'Question',
+		name: faq.question,
+		acceptedAnswer: {
+			'@type': 'Answer',
+			text: faq.answer,
+		},
+	})),
+};
 ---
 
-<Layout>
+<Layout
+	title="Frequently Asked Questions"
+	description="Common questions about my companion visits, services, pricing and subscriptions in the Helderberg area."
+>
+	<script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />
 	<PageHeader
 	image={faqHeader}
 		brightness={90}

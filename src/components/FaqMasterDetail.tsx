@@ -62,9 +62,9 @@ export default function FaqMasterDetail({ items }: Props) {
           <div className="mt-4">
             {current && (
               <div>
-                <h3 className="font-fraunces text-2xl font-bold text-gray-900 md:text-3xl">
+                <h2 className="font-fraunces text-2xl font-bold text-gray-900 md:text-3xl">
                   {current.question}
-                </h3>
+                </h2>
                 <p className="mt-5 text-lg leading-relaxed text-gray-600">
                   {current.answer}
                 </p>

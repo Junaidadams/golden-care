@@ -4,10 +4,13 @@ import PageHeader from '../components/PageHeader.astro';
 import HeadingText from '../components/HeadingText.astro';
 import Icon from '../components/Icon.tsx';
 import { about, philosophy } from '../../constants';
-import herBanner from '../assets/her-bannger-wr.jpg';
+import herBanner from '../assets/her-banner-wr.jpg';
 ---
 
-<Layout>
+<Layout
+	title="About"
+	description="Meet the companion behind Within Reach — learn about the values, experience and approach behind my personalised companionship services."
+>
 	<PageHeader
 		image={herBanner}
 		title={`About Me`}

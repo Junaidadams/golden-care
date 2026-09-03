@@ -81,7 +81,7 @@ export default function MobileMenu({ navLinks }: Props) {
 
         <div className="border-t border-gray-100 p-4">
           <a
-            href="/#services"
+            href="/contact"
             onClick={() => setOpen(false)}
             className="block rounded-lg bg-brand-600 px-4 py-3 text-center text-sm font-semibold text-white transition hover:bg-brand-700"
           >
