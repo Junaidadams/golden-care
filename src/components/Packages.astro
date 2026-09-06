@@ -23,16 +23,14 @@ const { items = packages } = Astro.props;
 		<div class="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2">
 			{items.map((pkg) => (
 				<article class="flex flex-col overflow-hidden rounded-sm bg-background-2 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
-					<div class="flex w-auto items-center  ">
+					<div class="flex aspect-[3/2] w-full items-center">
 						<Image
 							src={pkg.img}
 							alt={pkg.heading}
-							width={465}
-							height={190}
 							quality="medium"
 							loading="lazy"
 							decoding="async"
-							class="object-contain "
+							class="h-full w-full object-cover"
 						/>
 					</div>
 					<div class="flex flex-1 flex-col p-4">

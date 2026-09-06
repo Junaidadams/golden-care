@@ -2,6 +2,7 @@
 import { subscriptions } from '../../constants';
 import type { Subscription } from '../../constants';
 import HeadingText from './HeadingText.astro';
+import Icon from './Icon.tsx';
 
 interface Props {
 	items: Subscription[];
@@ -20,19 +21,28 @@ const { items = subscriptions } = Astro.props;
 
 		<div class="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3">
 			{items.map((plan) => (
-				<article class="flex flex-col rounded-sm bg-white p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
-					<h3 class="font-fraunces text-xl font-bold text-gray-900">{plan.name}</h3>
-					<p class="mt-4 text-3xl font-bold text-brand-700">
-						{plan.price}
-						<span class="text-base font-medium text-gray-500"> {plan.cadence}</span>
-					</p>
-					<p class="mt-4 flex-1 text-sm leading-relaxed text-gray-800">{plan.summary}</p>
-					<a
-						href={plan.cta.href}
-						class="mt-8 rounded-2xl bg-brand-600 px-6 py-3 text-center text-sm font-semibold text-white transition hover:bg-brand-700"
-					>
-						{plan.cta.label}
-					</a>
+				<article class="flex flex-col overflow-hidden rounded-sm bg-background-2 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+					<div class="flex flex-1 flex-col p-4">
+						<h3 class="text-xl font-bold text-black">{plan.name}</h3>
+						<p class="mt-1 text-sm font-semibold text-brand-700">
+							{plan.price}
+							<span class="text-xs font-medium text-gray-500"> {plan.cadence}</span>
+						</p>
+						<ul class="mt-4 flex-1 space-y-3">
+							{plan.points.map((point) => (
+								<li class="flex items-start gap-3 text-sm text-gray-800">
+									<Icon name="FiCheckCircle" className="mt-0.5 h-4 w-4 shrink-0 text-brand-600" />
+									{point}
+								</li>
+							))}
+						</ul>
+						<a
+							href={plan.cta.href}
+							class="mt-8 rounded-2xl bg-brand-600 px-6 py-3 text-center text-sm font-semibold text-white transition hover:bg-brand-700"
+						>
+							{plan.cta.label}
+						</a>
+					</div>
 				</article>
 			))}
 		</div>

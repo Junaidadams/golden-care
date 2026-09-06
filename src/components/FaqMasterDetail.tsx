@@ -55,7 +55,7 @@ export default function FaqMasterDetail({ items }: Props) {
 
       <div className="grid grid-cols-1 gap-10 lg:grid-cols-[1fr_1.1fr] lg:gap-16">
         {/* Answer panel */}
-        <div className="lg:sticky lg:top-28 lg:self-start">
+        <div className="lg:sticky lg:top-28 lg:self-start ">
           <p className="font-fraunces text-sm font-semibold uppercase tracking-wide text-gray-500">
             Answer
           </p>

@@ -8,11 +8,18 @@ import Subscriptions from '../components/Subscriptions.astro';
 import Location from '../components/Location.astro';
 import Philosophy from '../components/Philosophy.astro';
 import MiniFaq from '../components/MiniFaq.astro';
-import heroBanner from '../assets/herobanner2.jpg';
+import heroBanner from '../assets/hero-banner.jpeg';
+import heroBannerMb from '../assets/hero-banner-mb.jpeg';
 
 const heroPreload = await getImage({
 	src: heroBanner,
 	width: 1600,
+	quality: 'medium',
+	format: 'avif',
+});
+const heroPreloadMb = await getImage({
+	src: heroBannerMb,
+	width: 465,
 	quality: 'medium',
 	format: 'avif',
 });
@@ -22,7 +29,8 @@ const heroPreload = await getImage({
 	title="Companionship & support for older adults in the Helderberg area"
 	description="Friendly, personalised companionship for older adults in the Helderberg area — from a chat over tea to help with shopping, errands, admin and appointments."
 >
-	<link rel="preload" as="image" href={heroPreload.src} fetchpriority="high" slot="head" />
+	<link rel="preload" as="image" href={heroPreload.src} fetchpriority="high" media="(min-width: 769px)" slot="head" />
+	<link rel="preload" as="image" href={heroPreloadMb.src} fetchpriority="high" media="(max-width: 768px)" slot="head" />
 	<Hero />
 	<Packages />
 	<Subscriptions />

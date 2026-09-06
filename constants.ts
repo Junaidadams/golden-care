@@ -141,6 +141,7 @@ export interface Subscription {
   price: string;
   cadence: string;
   summary: string;
+  points: string[];
   cta: Cta;
 }
 
@@ -150,6 +151,7 @@ export const subscriptions: Subscription[] = [
     price: "R1010",
     cadence: "per month",
     summary: "4 wellness visits per month (1 hour each).",
+    points: ["4 wellness visits per month (1 hour each)"],
     cta: { label: "Contact me", href: "/contact", primary: true },
   },
   {
@@ -158,6 +160,10 @@ export const subscriptions: Subscription[] = [
     cadence: "per month",
     summary:
       "4 wellness visits + 2 shopping trips per month (1 hour each, within a 15km radius).",
+    points: [
+      "4 wellness visits per month (1 hour each)",
+      "2 shopping trips per month (1 hour each, within a 15km radius)",
+    ],
     cta: { label: "Contact me", href: "/contact", primary: true },
   },
   {
@@ -166,6 +172,10 @@ export const subscriptions: Subscription[] = [
     cadence: "per month",
     summary:
       "4 wellness visits + your choice of any 4 hourly services (shopping, outing, administration, technology, medical companion, or hospital visit/support).",
+    points: [
+      "4 wellness visits per month (1 hour each)",
+      "Your choice of any 4 hourly services (shopping, outing, administration, technology, medical companion, or hospital visit/support)",
+    ],
     cta: { label: "Contact me", href: "/contact", primary: true },
   },
 ];
@@ -236,74 +246,74 @@ export const faqs: Faq[] = [
   {
     question: "How do I arrange a visit for a parent or relative?",
     answer:
-      "Getting started is easy. Send me a message through the contact page or give me a call. We'll have a short chat about your family member's routine, interests and needs, then book a first visit at a time that suits them.",
+      "Getting started is easy. Send me a message through the contact page or give me a call. We will have a short chat about your family member's routine, interests and needs, then book a first visit at a time that suits them.",
     audience: "family",
   },
   {
     question: "Will you report back to me after visits?",
     answer:
-      "Yes, if you'd like. I'll send a brief update after each visit — how things went, what we did, and anything you should know. I'll only share what your family member is comfortable with.",
+      "Yes, if you would like. I will send a brief update after each visit — how things went, what we did, and anything you should know. I will only share what your family member is comfortable with.",
     audience: "family",
   },
   {
     question: "Can a family member pay for the services?",
     answer:
-      "Absolutely. Monthly packages and visits can be paid for by a family member on the client's behalf — we'll just arrange the billing details when we set things up.",
+      "Absolutely. Monthly packages and visits can be paid for by a family member on the client's behalf — we will just arrange the billing details when we set things up.",
     audience: "family",
   },
   {
     question: "Can I be present during a visit?",
     answer:
-      "Of course. Whether you'd like to sit in on a first visit or join occasionally, you're welcome. I know families often appreciate that peace of mind.",
+      "Of course. Whether you would like to sit in on a first visit or join occasionally, you are welcome. I know families often appreciate that peace of mind.",
     audience: "family",
   },
   {
     question: "How do you keep my family member's information private?",
     answer:
-      "Their privacy is very important to me. Anything shared with me stays between us, and I only discuss their situation with family members they've agreed I can speak to.",
+      "Their privacy is very important to me. Anything shared with me stays between us, and I only discuss their situation with family members they have agreed I can speak to.",
     audience: "family",
   },
   {
     question: "What if my family member is having a difficult day?",
     answer:
-      "No problem at all. If they're not up for company or an outing, we'll spend the time together quietly or reschedule. There's never any pressure — the visit is always on their terms.",
+      "No problem at all. If they are not up for company or an outing, we will spend the time together quietly or reschedule. There is never any pressure — the visit is always on their terms.",
     audience: "family",
   },
   {
     question:
-      "Can you accompany them to medical appointments when I can't be there?",
+      "Can you accompany them to medical appointments when I cannot be there?",
     answer:
-      "Yes — that's exactly what the medical companion service is for. I provide door-to-door support: meeting them at home, getting to the appointment, being present during it, taking notes, and helping them home safely.",
+      "Yes — that is exactly what the medical companion service is for. I provide door-to-door support: meeting them at home, getting to the appointment, being present during it, taking notes, and helping them home safely.",
     audience: "family",
   },
   {
     question: "What happens on my first visit?",
     answer:
-      "We'll start with a friendly chat over a cup of tea so we can get to know each other. I'll listen to what you enjoy, how you like to spend your time, and where a helping hand would make things easier. From there we can agree on a rhythm that suits you.",
+      "We will start with a friendly chat over a cup of tea so we can get to know each other. I will listen to what you enjoy, how you like to spend your time, and where a helping hand would make things easier. From there we can agree on a rhythm that suits you.",
     audience: "client",
   },
   {
     question: "Do I need to prepare anything before a visit?",
     answer:
-      "No, nothing at all — just be yourself. If you'd like me to help with a task, like organising paperwork or setting up a new phone, let me know ahead of time and I'll bring what's needed.",
+      "No, nothing at all — just be yourself. If you would like me to help with a task, like organising paperwork or setting up a new phone, let me know ahead of time and I will bring what is needed.",
     audience: "client",
   },
   {
     question: "Will I see the same person every time?",
     answer:
-      "Yes. I work on my own, so you'll always see the same familiar face. There's no rotation of different people, which I think makes visits feel far more personal.",
+      "Yes. I work on my own, so you will always see the same familiar face. There is no rotation of different people, which I think makes visits feel far more personal.",
     audience: "client",
   },
   {
     question: "What if I need help with something not on your services list?",
     answer:
-      "Just ask. If it's within my abilities I'm happy to help, and if it isn't I'll point you to someone who can. There's no harm in asking.",
+      "Just ask. If it is within my abilities I am happy to help, and if it is not I will point you to someone who can. There is no harm in asking.",
     audience: "client",
   },
   {
     question: "Can I change my regular visit schedule?",
     answer:
-      "Of course. Just give me 24 hours notice to cancel or change a visit and we'll find a new time that works for you.",
+      "Of course. Just give me 24 hours notice to cancel or change a visit and we will find a new time that works for you.",
     audience: "client",
   },
 ];
@@ -430,14 +440,14 @@ export const footerColumns: FooterColumn[] = [
 ];
 
 export const footerContact = {
-  phone: "+27761461291",
-  email: "carylhenrico8@gmail.com",
+  phone: "+27 72 516 3185",
+  email: "caryl@within-reach.co.za",
   address: "Helderberg Area, Cape Town",
 };
 
 export const socialLinks: { icon: IconName; label: string; href: string }[] = [
   // TODO: replace placeholder "#" hrefs with real social profile URLs.
-  { icon: "FaFacebook", label: "Facebook", href: "#" },
-  { icon: "FaTwitter", label: "Twitter", href: "#" },
-  { icon: "FaInstagram", label: "Instagram", href: "#" },
+  // { icon: "FaFacebook", label: "Facebook", href: "#" },
+  // { icon: "FaTwitter", label: "Twitter", href: "#" },
+  // { icon: "FaInstagram", label: "Instagram", href: "#" },
 ];

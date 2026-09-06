@@ -5,6 +5,9 @@ import HeadingText from '../components/HeadingText.astro';
 import Icon from '../components/Icon.tsx';
 import { about, philosophy } from '../../constants';
 import herBanner from '../assets/her-banner-wr.jpg';
+import { Image } from 'astro:assets';
+import aboutImage from '../assets/about.jpeg';
+
 ---
 
 <Layout
@@ -24,6 +27,15 @@ import herBanner from '../assets/her-banner-wr.jpg';
 				<div class="relative flex aspect-[4/5] items-center justify-center overflow-hidden rounded-sm bg-gradient-to-br from-brand-100 via-brand-50 to-gray-100 shadow-sm">
 					<!-- TODO: replace placeholder with a photo of Caryl when available -->
 					<Icon name="FaUserNurse" className="h-24 w-24 text-brand-600/40" />
+					<Image
+							src={aboutImage}
+							alt="Map of our service area"
+							widths={[600, 900, 1280]}
+							sizes="(min-width: 1024px) 50vw, 100vw"
+							quality="medium"
+							loading="lazy"
+							class="w-full h-full rounded-sm object-cover"
+						/>
 					<span class="absolute bottom-4 rounded-lg bg-white/80 px-4 py-2 text-sm font-semibold text-gray-700 backdrop-blur">
 						{about.name}
 					</span>
@@ -77,10 +89,10 @@ import herBanner from '../assets/her-banner-wr.jpg';
 	<section class="bg-brand-600">
 		<div class="mx-auto max-w-4xl px-4 py-24 text-center sm:px-6 lg:px-8">
 			<h2 class="text-3xl font-fraunces font-semibold tracking-tight text-white sm:text-4xl">
-				I'd love to meet you
+				I would love to meet you
 			</h2>
 			<p class="mt-4 text-lg text-brand-100">
-				Whether you have a question about my services or would like to arrange a visit, I'm here to help.
+				Whether you have a question about my services or would like to arrange a visit, I am here to help.
 			</p>
 			<a
 				href="/contact"
