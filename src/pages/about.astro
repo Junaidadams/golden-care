@@ -12,33 +12,36 @@ import aboutImage from '../assets/about.jpeg';
 
 <Layout
 	title="About"
-	description="Meet the companion behind Within Reach — learn about the values, experience and approach behind my personalised companionship services."
+	description="Meet the person behind Within Reach — learn about the values, experience and approach behind my personalised assistance services."
 >
 	<PageHeader
 		image={herBanner}
 		title={`About Me`}
 		subtitle="About"
-		description="Growing older should not mean becoming less independent — meet the companion behind Within Reach."
+		description="Growing older should not mean becoming less independent — meet the person behind Within Reach."
 	/>
 
 	<section class="bg-background-1 border-b border-gray-200">
 		<div class="mx-auto max-w-5xl px-4 py-24 sm:px-6 lg:px-8">
 			<div class="grid grid-cols-1 items-start gap-12 lg:grid-cols-2">
-				<div class="relative flex aspect-[4/5] items-center justify-center overflow-hidden rounded-sm bg-gradient-to-br from-brand-100 via-brand-50 to-gray-100 shadow-sm">
-					<!-- TODO: replace placeholder with a photo of Caryl when available -->
-					<Icon name="FaUserNurse" className="h-24 w-24 text-brand-600/40" />
-					<Image
+				<div class="flex flex-col gap-6">
+					<div class="relative aspect-[4/5] overflow-hidden rounded-sm shadow-sm">
+						<Image
 							src={aboutImage}
-							alt="Map of our service area"
+							alt="Caryl Henrico"
 							widths={[600, 900, 1280]}
 							sizes="(min-width: 1024px) 50vw, 100vw"
 							quality="medium"
 							loading="lazy"
-							class="w-full h-full rounded-sm object-cover"
+							class="h-full w-full rounded-sm object-cover"
 						/>
-					<span class="absolute bottom-4 rounded-lg bg-white/80 px-4 py-2 text-sm font-semibold text-gray-700 backdrop-blur">
-						{about.name}
-					</span>
+						<span class="absolute bottom-4 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-lg bg-black/40 px-4 py-2 text-sm font-bold text-white backdrop-blur">
+							{about.name}
+						</span>
+					</div>
+					<blockquote class="border-l-4 border-brand-600 pl-4 leading-relaxed text-gray-800 italic">
+						"{about.quote}"
+					</blockquote>
 				</div>
 
 				<div>
@@ -49,19 +52,16 @@ import aboutImage from '../assets/about.jpeg';
 						position="left"
 					/>
 
-					<blockquote class="mt-8 border-l-4 border-brand-600 pl-4 text-lg italic leading-relaxed text-gray-800">
-						{about.paragraphs[1]}
-					</blockquote>
-
 					<div class="mt-8 space-y-5">
-						<p class="leading-relaxed text-gray-800">{about.paragraphs[2]}</p>
-						<p class="leading-relaxed text-gray-800">{about.paragraphs[3]}</p>
-						<p class="leading-relaxed text-gray-800">{about.paragraphs[4]}</p>
-						<p class="mt-2 font-fraunces text-xl font-semibold italic text-brand-700">
+						{about.paragraphs.slice(1, 5).map((paragraph) => (
+							<p class="leading-relaxed text-gray-800">{paragraph}</p>
+						))}
+						<p class="font-fraunces text-xl font-semibold italic text-brand-700">
 							{about.tagline}
 						</p>
-						<p class="leading-relaxed text-gray-800">{about.paragraphs[5]}</p>
-						<p class="leading-relaxed text-gray-800">{about.paragraphs[6]}</p>
+						{about.paragraphs.slice(5).map((paragraph) => (
+							<p class="leading-relaxed text-gray-800">{paragraph}</p>
+						))}
 					</div>
 				</div>
 			</div>

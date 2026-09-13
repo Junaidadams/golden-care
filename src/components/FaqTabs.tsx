@@ -41,7 +41,7 @@ export default function FaqTabs({ items, limit, mini = false }: Props) {
               className={` px-4 py-2 text-sm font-semibold transition hover:cursor-pointer ${
                 selected
                   ? "bg-brand-600 text-white shadow-sm"
-                  : "border border-gray-300 bg-white text-gray-700 hover:border-brand-500 hover:text-brand-600"
+                  : "border  bg-white  border-brand-500 text-brand-600"
               }`}
             >
               {tab.label}

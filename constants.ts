@@ -61,7 +61,7 @@ export const navLinks: FooterLink[] = [
 ];
 
 export const hero = {
-  heading: "Companionship and support for everyday life",
+  heading: "Assistance and support for everyday life",
   text: "I offer friendly, personalised companionship for older adults in the Helderberg area — from sharing a cup of tea and a chat to help with shopping, errands, admin and attending appointments.",
   ctas: [
     { label: "Get Started", href: "#services", primary: true },
@@ -86,7 +86,7 @@ export const packages: Package[] = [
       "Medication reminder & check",
       "Family feedback if required",
     ],
-    cta: { label: "Book a visit", href: "/contact", primary: true },
+    cta: { label: "Enquire now", href: "/contact", primary: true },
   },
   {
     icon: "FaHandHoldingHeart",
@@ -102,7 +102,6 @@ export const packages: Package[] = [
     ],
     cta: { label: "Enquire now", href: "/contact", primary: true },
   },
-  // TODO: replace placeholder image below with a dedicated Admin & Technology image.
   {
     icon: "FaCalendarAlt",
     heading: "Admin & Technology",
@@ -115,9 +114,8 @@ export const packages: Package[] = [
     ],
     cta: { label: "Enquire now", href: "/contact", primary: true },
   },
-  // TODO: revisit later — the procedures list also covers Cure Day Hospital
-  // Paardevlei and Summerhill Surgical Centre Dennegeur. Facilities currently
-  // shown for the Medical Companion service are the 3 core hospitals only.
+  // Medical Companion covers the 5 listed facilities, within a 15km radius
+  // (AA rate of R4.95 per km beyond).
   {
     icon: "FaUserNurse",
     heading: "Medical Companion",
@@ -128,14 +126,13 @@ export const packages: Package[] = [
       "Full door-to-door assistance, including help inside and being present at the appointment if needed",
       "Hospital visits to an admitted patient",
       "Support for procedures, scans & x-rays — check in/out, navigate administration, settle in ward, pack personal items, collect script and transport home",
-      "Facilities covered: Mediclinic Vergelegen, Busamed Hospital, Helderberg Hospital",
+      "Within a 15km radius (AA rate of R4.95 per km beyond)",
+      "Facilities covered: Mediclinic Vergelegen, Busamed Hospital, Helderberg Hospital, Cure Day Hospital Paardevlei, Summerhill Surgical Centre",
     ],
     cta: { label: "Enquire now", href: "/contact", primary: true },
   },
 ];
 
-// Summarised subscription plans shown on the homepage only for now.
-// TODO: build a dedicated subscriptions page (and full detail per plan) later.
 export interface Subscription {
   name: string;
   price: string;
@@ -182,7 +179,7 @@ export const subscriptions: Subscription[] = [
 
 export const locations = {
   heading: "Areas Serviced",
-  text: "I serve the Somerset West, Strand and Gordon's Bay areas, bringing companionship to people wherever they call home.",
+  text: "I serve the Somerset West, Strand and Gordon's Bay areas, bringing assistance and support to people wherever they call home.",
   areas: ["Somerset West", "Strand", "Gordon's Bay"],
 };
 
@@ -204,7 +201,7 @@ export const faqs: Faq[] = [
   {
     question: "How are additional and medical services billed?",
     answer:
-      "All additional and medical services are charged at R260 per hour. Partial hours after the first hour are billed in 30-minute blocks at a pro-rata half rate.",
+      "All additional and medical services are charged at R260 per hour within a 15km radius, plus an AA rate of R4.95 per km beyond. Partial hours after the first hour are billed in 30-minute blocks at a pro-rata half rate.",
     audience: "both",
   },
   {
@@ -214,9 +211,10 @@ export const faqs: Faq[] = [
     audience: "both",
   },
   {
-    question: "Is there a travel charge for shopping and outings?",
+    question:
+      "Is there a travel charge for shopping, outings and medical companion services?",
     answer:
-      "Shopping and outing services are R260 per hour within a 15km radius. Outside the radius, an AA rate of R4.95 per km is added.",
+      "Shopping, outings and medical companion services are R260 per hour within a 15km radius. Outside the radius, an AA rate of R4.95 per km is added.",
     audience: "both",
   },
   {
@@ -329,9 +327,10 @@ export const philosophy = {
 // Note: render the words 'being there' in the tagline in italics if/when displayed.
 export const philosophyFullText = {
   tagline: "Within Reach is about being there — not taking over.",
+  quote:
+    "I believe that sometimes, what makes the greatest difference is simply having the right person within reach — someone dependable who can lend a helping hand, offer reassurance, accompany you when needed, or take care of the practical things that have become more difficult.",
   paragraphs: [
     "Growing older should not mean becoming less independent.",
-    "I believe that sometimes, what makes the greatest difference is simply having the right person within reach — someone dependable who can lend a helping hand, offer reassurance, accompany you when needed, or take care of the practical things that have become more difficult.",
     "I created Within Reach because I wanted to bring together my professional experience, organisational skills and genuine ability to connect with others, and use them in a way that makes everyday life a little easier for people.",
     "My background in business and corporate environments, together with years of working closely with people, has taught me the value of being trustworthy, discreet, organised, patient and dependable. I believe in treating every person with respect, protecting their independence and, above all, taking the time to listen.",
     "After spending a brief time in the UK, I made the decision to bring my experience home and create something meaningful here in South Africa.",
@@ -369,7 +368,7 @@ export const termsOfService = {
     {
       title: "My Services",
       bullets: [
-        "I provide companionship, assistance and transportation services.",
+        "I provide assistance and transportation services.",
         "I do not provide nursing or medical services.",
         "I do not administer medication or provide medical advice.",
       ],
