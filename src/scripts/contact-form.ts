@@ -1,4 +1,4 @@
-const ENDPOINT = "https://mail-server-6sjb.onrender.com/api/mail/portfolio-contact";
+const ENDPOINT = "https://mail-server-6sjb.onrender.com/api/mail/withinreach-contact";
 
 export function initContactForm() {
 	const form = document.getElementById("contact-form") as HTMLFormElement | null;
