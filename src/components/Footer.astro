@@ -29,7 +29,7 @@ import Logo from './Logo.astro';
 			</div>
 
 			{footerColumns.map((column) => (
-				<div class="mx-auto">
+				<div class="w-full text-left md:justify-self-center md:w-auto">
 					<h3 class="text-sm font-semibold uppercase tracking-wider text-black">
 						{column.heading}
 					</h3>
@@ -45,7 +45,7 @@ import Logo from './Logo.astro';
 				</div>
 			))}
 
-			<div class="mx-auto">
+			<div class="w-full text-left md:justify-self-center md:w-auto">
 				<h3 class="text-sm font-semibold uppercase tracking-wider text-black">Contact</h3>
 				<ul class="mt-4 space-y-3 text-sm text-gray-800">
 					<li>
