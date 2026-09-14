@@ -27,6 +27,10 @@ const { items = packages } = Astro.props;
 						<Image
 							src={pkg.img}
 							alt={pkg.heading}
+							width={800}
+							height={534}
+							widths={[400, 600, 800]}
+							sizes="(min-width: 768px) 50vw, 100vw"
 							quality="medium"
 							loading="lazy"
 							decoding="async"

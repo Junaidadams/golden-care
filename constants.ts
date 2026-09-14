@@ -61,8 +61,8 @@ export const navLinks: FooterLink[] = [
 ];
 
 export const hero = {
-  heading: "Assistance and support for everyday life",
-  text: "I offer friendly, personalised companionship for older adults in the Helderberg area — from sharing a cup of tea and a chat to help with shopping, errands, admin and attending appointments.",
+  heading: "Assistance and support for older adults in the Helderberg area",
+  text: "I offer friendly, personalised assistance for older adults in the Helderberg area — from sharing a cup of tea and a chat to help with shopping, errands, admin and attending appointments.",
   ctas: [
     { label: "Get Started", href: "#services", primary: true },
     { label: "Learn More", href: "#philosophy" },
